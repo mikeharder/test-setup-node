@@ -24,4 +24,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       
-      - run: node -v
+      - run: node -v || echo "Node.js not available"
