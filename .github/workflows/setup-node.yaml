@@ -1,4 +1,4 @@
-name: Use Node.js
+name: setup-node
 
 on:
   pull_request:
