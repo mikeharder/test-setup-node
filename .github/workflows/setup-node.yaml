@@ -16,8 +16,7 @@ jobs:
         os: [ubuntu-slim, ubuntu-latest]
 
     steps:
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
       
