@@ -1,0 +1,23 @@
+name: setup-node
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+
+    strategy:
+      matrix:
+        node-version: ['24.x', '24', '']
+        os: [ubuntu-slim, ubuntu-latest]
+
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - run: node -v
